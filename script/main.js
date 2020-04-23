@@ -47,10 +47,4 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-});
+}); // End ready document

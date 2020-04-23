@@ -8,4 +8,30 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  background-color: lightgrey;
+}
+
+h1 {
+  margin: 30px 0 30px;
+  text-align: center;
+  color: darkred;
+}
+
+.register {
+  max-width: 1170px;
+  min-height: 500px;
+  margin: 0 auto;
+  padding: 10px 25px;
+  border-radius: 25px;
+  background-color: darkred;
+  color: #fff;
+}
+
+.register ul {
+  list-style: none;
+}
+
+.register span {
+  font-size: 18px;
+  font-weight: bold;
 }

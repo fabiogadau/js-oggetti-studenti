@@ -10,9 +10,30 @@
 </head>
 <body>
   
+  <h1>Registro Studenti</h1>
+  <main class="register"></main>
+
+  <!-- Templates Handlebars -->
+    <script id="register-template" type="text/x-handlebars-template">
+      <ul>
+        <li class="student-name">
+          <span>Nome: </span>
+          {{ name }} 
+        </li>
+        <li class="student-surname">
+          <span>Cognome: </span>
+          {{ surname }}
+        </li>
+        <li class="student-age">
+          <span>Età: </span>
+          {{ age }}
+        </li>
+      </ul>
+    </script>
 
   <!-- JS -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
   <script src="script/main.js"></script>
 </body>
 </html>

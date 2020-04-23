@@ -1,3 +1,4 @@
+/* GENERAL LAYOUT */
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +16,7 @@ body {
   align-items: center;
 }
 
+/* General container */
 #chat-container {
   height: 95%;
   min-width: 900px;
@@ -26,11 +28,13 @@ body {
   flex-direction: column;
 }
 
+/* Chat name */
 .chat-title {
   margin: 10px;
   text-align: center;
 }
 
+/* Chat Panel */
 .chat {
   flex-grow: 1;
   overflow-y: auto;
@@ -38,6 +42,7 @@ body {
   background-color: mediumaquamarine;
 }
 
+/* Chat messages */
 .chat .message {
   position: relative;
   list-style: none;
@@ -71,6 +76,7 @@ body {
   color: khaki;
 }
 
+/* Chat controls */
 .chat-control {
   padding: 5px;
   display: flex;
@@ -79,6 +85,27 @@ body {
 
 .chat-control .chat-input {
   flex-grow: 1;
+  height: 30px;
   margin-right: 5px;
+  padding: 10px 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: lavender;
+}
+
+.chat-control i {
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.chat-control i:hover {
+  color: greenyellow;
+}
+
+.chat-control .chat-input:focus {
+  background-color: #fff;
+  border: 1px solid lightslategrey;
 }
 

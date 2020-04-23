@@ -69,7 +69,7 @@ $(document).ready(function() {
 
       chat.scrollTop( chat.innerHeight() );
 
-    }, 1000);
+    }, 2000);
 
   });
 

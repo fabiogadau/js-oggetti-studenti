@@ -58,6 +58,18 @@ body {
 .chat .message.sent {
   background-color: steelblue;
   float: right;
+  position: relative;
+}
+
+.chat .message.sent::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: steelblue;
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: 10px;
+  left: -5px;
 }
 
 .chat .message.received {

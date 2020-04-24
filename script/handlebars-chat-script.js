@@ -22,17 +22,17 @@ $(document).ready(function() {
   var defaultMessages = [
 
     {
-      messageText: 'Ciao',
+      messageText: getRandomString(),
       messageTime: getActualTime(),
       class: 'sent'
     },
     {
-      messageText: 'Come stai?',
+      messageText: getRandomString(),
       messageTime: getActualTime(),
       class: 'received'
     },
     {
-      messageText: 'Tutto a posto',
+      messageText: getRandomString(),
       messageTime: getActualTime(),
       class: 'sent'
     }
@@ -58,8 +58,36 @@ $(document).ready(function() {
   };
 
   
-  // Al click del bottone viene inviato il messaggio
+  // Al click del bottone viene inviato il messaggio e dopo due secondi si riceve la risposta automatica
   chatBtn.click(function() {
+
+    // Invoco la funzione invio messaggio e risposta automatica
+    sendAndReceiveMessages();
+
+  });
+
+  
+  // Al keyup del tasto invio viene inviato il messaggio e dopo due secondi si riceve la risposta automatica
+  chatInput.keyup(function(event) {
+
+    // Se il tasto premuto è Invio
+    if ( event.wich == 13 || event.keyCode == 13 ) {
+
+      // Invoco la funzione invio messaggio e risposta automatica
+      sendAndReceiveMessages();
+
+    }
+
+  });
+
+
+  /*******************************
+  FUNZIONI
+  ********************************/
+
+  // Funzione invio messaggio e risposta automatica
+  // Ho preferito includere tutto in una funzione per poterla riutilizzare al keyup del tasto Invio
+  function sendAndReceiveMessages(){
 
     // Valore digitato nell'input
     var messageInput = chatInput.val().trim();
@@ -98,7 +126,7 @@ $(document).ready(function() {
       var message = {
 
         //Testo del messaggio
-        text: 'ok',
+        text: getRandomString(),
         
         // Orario di invio messaggio
         time: getActualTime(),
@@ -118,12 +146,8 @@ $(document).ready(function() {
 
     }, 2000);
 
-  });
+  };
 
-
-  /*******************************
-  FUNZIONI
-  ********************************/
   // Funzione per ottenere ora attuale
   function getActualTime(){
 
@@ -145,6 +169,25 @@ $(document).ready(function() {
     }
 
     return number;
+
+  };
+
+  
+  // Funzione che ritorna una stringa di testo casuale
+  function getRandomString(){
+
+    var strings = [
+      'Buongiollo',
+      'A pra foco',
+      'Scuola di ganza',
+      'TG d\'uno',
+      'Nigna tagnafuoco',
+      'Oggi pomegiggio'
+    ];
+
+    var randomString = strings[ Math.floor( Math.random() * strings.length ) ];
+
+    return randomString;
 
   };
 
